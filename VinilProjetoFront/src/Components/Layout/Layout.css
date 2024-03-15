@@ -1,7 +1,11 @@
+body{
+    background-color:black;
+}
+
 /*Header*/
 .header-full{
     width:100%;
-    background-color:black;
+    background-color:#808080;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -22,9 +26,18 @@
     margin-left:20px;
 }
 
+/*Main*/
+.main-full{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+.main-dentro{
+    width:80%;
+}
+
 /*Barra de itens*/
 .barra-informacao-Pagina{
-    width:100%;
     height:30px;
     display:flex;
     justify-content:center;
@@ -32,8 +45,8 @@
     margin-top:10px;
 }
 .barra-informacao-Pagina-dentro{
-    width:80%;
-    background-color:black;
+    width:100%;
+    background-color:#808080;
     height:100%;
     border-radius:5px;
     display:flex;
@@ -43,3 +56,28 @@
     padding-left:20px;
 }
 
+/*Busca de vinil*/
+.busca-de-vinils-full{
+    display:flex;
+    margin-top:10px;
+    width:20%;
+    height:500px;
+}
+.busca-de-vinil{
+    border-radius:5px;
+    background-color:#f2d95f;
+    padding-left:10px;
+    padding-bottom:20px;
+}
+.vinilEnumItem{
+    margin-left:22px;
+    font-size:20px;
+    margin-top:10px;
+    cursor: pointer;
+}
+/*Children*/
+.children-full{
+    margin-top:10px;
+    margin-left:2%;
+    width:78%;
+}

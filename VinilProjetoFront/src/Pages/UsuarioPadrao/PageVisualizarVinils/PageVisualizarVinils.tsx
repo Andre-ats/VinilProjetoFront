@@ -8,7 +8,8 @@ export function VisualizarVinils(){
             mostrarCarrinho
             mostrarPerfil
             mostrarBarraInformacaoPagina
-            TextoinformacaoBarraIndormacaoPagina="Visualizar Vinils"
+            mostrarBuscaDeVinils
+            textoinformacaoBarraIndormacaoPagina="Visualizar Vinils"
         />
     )
 }
