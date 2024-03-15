@@ -1,4 +1,6 @@
+import { Fragment } from "react/jsx-runtime";
 import { Layout } from "../../../Components/Layout/Layout";
+import { ListarVinils } from "../../../Components/ListarVinils/ListarVinils";
 
 export function VisualizarVinils(){
     return(
@@ -10,6 +12,10 @@ export function VisualizarVinils(){
             mostrarBarraInformacaoPagina
             mostrarBuscaDeVinils
             textoinformacaoBarraIndormacaoPagina="Visualizar Vinils"
-        />
+        >
+            <Fragment>
+                <ListarVinils/>
+            </Fragment>
+        </Layout>
     )
 }
