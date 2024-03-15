@@ -14,7 +14,9 @@ export function VisualizarVinils(){
             textoinformacaoBarraIndormacaoPagina="Visualizar Vinils"
         >
             <Fragment>
-                <ListarVinils/>
+                <ListarVinils
+                    URL="UsuarioComprador/getTodosVinil"
+                />
             </Fragment>
         </Layout>
     )
