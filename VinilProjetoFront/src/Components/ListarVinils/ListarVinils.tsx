@@ -29,18 +29,30 @@ export function ListarVinils(props : ListarVinils){
     }, []);
 
     return(
-        <div className="visualizar-vinil-full">
-            {vinils.vinilList && vinils.vinilList.map((item: VinilList)=>(
-                <div className="vinil-unitario" key={item.id}>
-                    <div className="imagem-vinil">
-                        <img width={100} height={120} src={SgDiscos} alt="" />
+        <div>
+            <h1 className="titulo-vinils">Vinils Geral:</h1>
+            <div className="visualizar-vinil-full">
+                {vinils.vinilList && vinils.vinilList.map((item: VinilList, key)=>(
+                    <div key={key} className="vinil-unitario">
+                        <div className="vinil-unitario-dentro">
+                            <div className="img-vinil">
+                                <img src={SgDiscos} alt="" />
+                            </div>
+                            <div className="especificacoes-vinil">
+                                <div className="nome-vinil">
+                                    <h2>{item.nomeVinil}</h2>
+                                </div>
+                                <div className="preco-vinil">
+                                    <h2>R$ {item.precoVinil}</h2>
+                                </div>
+                                <div className="botao-adicionar-carrinho">
+                                    <button>Adicionar no Carrinho</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="vinil-especificacoes">
-                        <p style={{color:"white"}}>{item.nomeVinil}</p>_
-                        <p style={{color:"white"}}>{item.precoVinil}</p>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }

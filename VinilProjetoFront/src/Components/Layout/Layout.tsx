@@ -70,7 +70,7 @@ export function Layout(props : ILayout){
                     {props.mostrarBarraInformacaoPagina &&
                         <div className="barra-informacao-Pagina">
                             <div className="barra-informacao-Pagina-dentro">
-                                <p style={{color:"white"}}>{props.textoinformacaoBarraIndormacaoPagina}</p>
+                                <p style={{color:"black"}}>{props.textoinformacaoBarraIndormacaoPagina}</p>
                             </div>
                         </div>
                     }
@@ -83,7 +83,7 @@ export function Layout(props : ILayout){
                                         <Fragment>
                                             {enumEstiloMusica.map((vinilEnum, key)=>(
                                                 <div className="vinilEnumItem" key={key}>
-                                                    {vinilEnum}
+                                                    -{vinilEnum}
                                                 </div>
                                             ))}
                                         </Fragment>
