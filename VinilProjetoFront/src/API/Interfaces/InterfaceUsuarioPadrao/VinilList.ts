@@ -1,5 +1,6 @@
 import { estiloMusical } from "./EnumEstiloMusical";
 import { statusVinil } from "./EnumStatusVinil";
+import { VinilImagem } from "./VinilImagem";
 
 export interface VinilList{
     nomeVinil: string,
@@ -7,6 +8,7 @@ export interface VinilList{
     precoVinil: string,
     quantiaVinil: string,
     estiloMusical: estiloMusical,
+    vinilImagem: VinilImagem[]
     statusVinil: statusVinil,
     id: string
 }

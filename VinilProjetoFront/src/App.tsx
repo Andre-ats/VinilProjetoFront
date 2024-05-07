@@ -1,13 +1,13 @@
 import { Fragment } from 'react/jsx-runtime'
 import { Route, Routes } from 'react-router-dom'
-import { VisualizarVinils } from './Pages/UsuarioPadrao/PageVisualizarVinils/PageVisualizarVinils'
+import { VisualizarVinis } from './Pages/UsuarioPadrao/PageVisualizarVinils/PageVisualizarVinils'
 
 function App() {
 
   return (
     <Fragment>
       <Routes>
-        <Route path='/VisualizarVinils' element={<VisualizarVinils/>}/>
+        <Route path='/VisualizarVinis' element={<VisualizarVinis/>}/>
       </Routes>
     </Fragment>
   )

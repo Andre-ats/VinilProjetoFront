@@ -1,8 +1,8 @@
 import "./ListarVinils.css"
-import SgDiscos from "../../Imagens/SgDiscos.png"
 import { useEffect, useState } from "react";
 import { Get } from "../../API/Requests/Get/GetModel";
 import { VinilList } from "../../API/Interfaces/InterfaceUsuarioPadrao/VinilList";
+
 
 interface ListarVinils{
     URL: string
@@ -14,29 +14,33 @@ interface RetornoVinilList{
 
 export function ListarVinils(props : ListarVinils){
 
-    const [vinils, setVinils] = useState<RetornoVinilList>({ vinilList: [] });
-
+    const [vinis, setVinis] = useState<RetornoVinilList>({ vinilList: [] });
     useEffect(() => {
-        const fetchVinils = async () => {
+        const fetchVinis = async () => {
           await Get({
-            URL: props.URL,
-            setCallback: setVinils,
+            URL: props.URL + "getTodosVinil",
+            setCallback: setVinis,
             MensagemFalha: "Vinil nao encontrado"
           })
         };
-    
-        fetchVinils();
+
+        fetchVinis()
     }, []);
+
+    
+
+    console.log(vinis)
+
 
     return(
         <div>
-            <h1 className="titulo-vinils">Vinils Geral:</h1>
+            <h1 className="titulo-vinils">Vinis Geral:</h1>
             <div className="visualizar-vinil-full">
-                {vinils.vinilList && vinils.vinilList.map((item: VinilList, key)=>(
+                {vinis.vinilList && vinis.vinilList.map((item: VinilList, key)=>(
                     <div key={key} className="vinil-unitario">
                         <div className="vinil-unitario-dentro">
                             <div className="img-vinil">
-                                <img src={SgDiscos} alt="" />
+                                <img width={450} height={450} src={item.vinilImagem[0].rotaImagemVinil} alt="Imagem"/>
                             </div>
                             <div className="especificacoes-vinil">
                                 <div className="nome-vinil">

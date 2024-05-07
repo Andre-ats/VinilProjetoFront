@@ -2,7 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 import { Layout } from "../../../Components/Layout/Layout";
 import { ListarVinils } from "../../../Components/ListarVinils/ListarVinils";
 
-export function VisualizarVinils(){
+export function VisualizarVinis(){
     return(
         <Layout
             mostrarHeader
@@ -11,11 +11,11 @@ export function VisualizarVinils(){
             mostrarPerfil
             mostrarBarraInformacaoPagina
             mostrarBuscaDeVinils
-            textoinformacaoBarraIndormacaoPagina="Visualizar Vinils"
+            textoinformacaoBarraIndormacaoPagina="Visualizar Vinis"
         >
             <Fragment>
                 <ListarVinils
-                    URL="UsuarioComprador/getTodosVinil"
+                    URL="UsuarioComprador/"
                 />
             </Fragment>
         </Layout>

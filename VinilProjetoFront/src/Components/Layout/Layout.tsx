@@ -78,7 +78,7 @@ export function Layout(props : ILayout){
                         {props.mostrarBuscaDeVinils && 
                             <div className="busca-de-vinils-full">
                                 <div className="busca-de-vinil">
-                                    <h2 style={{cursor:"pointer", userSelect:"none"}} onClick={abrirTab}> {"> Vinils"}</h2>
+                                    <h2 style={{cursor:"pointer", userSelect:"none"}} onClick={abrirTab}> {"> Vinis"}</h2>
                                     {abreTab && 
                                         <Fragment>
                                             {enumEstiloMusica.map((vinilEnum, key)=>(
