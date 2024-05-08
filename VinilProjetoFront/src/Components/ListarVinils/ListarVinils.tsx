@@ -2,6 +2,9 @@ import "./ListarVinils.css"
 import { useEffect, useState } from "react";
 import { Get } from "../../API/Requests/Get/GetModel";
 import { VinilList } from "../../API/Interfaces/InterfaceUsuarioPadrao/VinilList";
+import { useAppDispatch } from "../../Store/Types";
+import { altera } from "../../Store/VinilVisualizarSlice";
+import { useSelector } from "react-redux";
 
 
 interface ListarVinils{
@@ -13,6 +16,8 @@ interface RetornoVinilList{
 }
 
 export function ListarVinils(props : ListarVinils){
+
+    const dispatch = useAppDispatch()
 
     const [vinis, setVinis] = useState<RetornoVinilList>({ vinilList: [] });
     useEffect(() => {
@@ -27,10 +32,9 @@ export function ListarVinils(props : ListarVinils){
         fetchVinis()
     }, []);
 
-    
-
-    console.log(vinis)
-
+    function visualizarVinilSlice(item: VinilList){
+        dispatch(altera(item))
+    }
 
     return(
         <div>
@@ -51,6 +55,9 @@ export function ListarVinils(props : ListarVinils){
                                 </div>
                                 <div className="botao-adicionar-carrinho">
                                     <button>Adicionar no Carrinho</button>
+                                </div>
+                                <div className="botao-adicionar-carrinho">
+                                    <button onClick={()=>visualizarVinilSlice(item)}>Visualizar</button>
                                 </div>
                             </div>
                         </div>

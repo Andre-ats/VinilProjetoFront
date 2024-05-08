@@ -15,7 +15,7 @@ export function VisualizarVinis(){
         >
             <Fragment>
                 <ListarVinils
-                    URL="UsuarioComprador/"
+                    URL="Vinil/"
                 />
             </Fragment>
         </Layout>
