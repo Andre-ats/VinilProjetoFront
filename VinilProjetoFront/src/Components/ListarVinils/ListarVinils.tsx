@@ -5,6 +5,7 @@ import { VinilList } from "../../API/Interfaces/InterfaceUsuarioPadrao/VinilList
 import { useAppDispatch } from "../../Store/Types";
 import { altera } from "../../Store/VinilVisualizarSlice";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 
 interface ListarVinils{
@@ -18,6 +19,7 @@ interface RetornoVinilList{
 export function ListarVinils(props : ListarVinils){
 
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
 
     const [vinis, setVinis] = useState<RetornoVinilList>({ vinilList: [] });
     useEffect(() => {
@@ -34,6 +36,7 @@ export function ListarVinils(props : ListarVinils){
 
     function visualizarVinilSlice(item: VinilList){
         dispatch(altera(item))
+        navigate(`/VisualizarVinisEspecifico/${item.nomeVinil}`)
     }
 
     return(
