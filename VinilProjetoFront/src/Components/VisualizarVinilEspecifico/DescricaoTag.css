@@ -1,0 +1,31 @@
+.VinilDescricaoTagToda{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.VinilDescricaoTagDentro{
+    width:90%;
+}
+
+.VinilDescricaoTag-Descricao{
+    width:90%;
+    padding:10px 0px 10px 10px;
+    box-shadow: 5px 10px 5px rgb(153, 153, 153);
+    border:1px solid rgb(219, 219, 219);
+    margin:0px;
+}
+
+.VinilDescricaoTagAba{
+    margin:0px;
+    width:7.2%;
+    border-top:1px solid rgb(219, 219, 219);
+    border-right:1px solid rgb(219, 219, 219);
+    border-left:1px solid rgb(219, 219, 219);
+    border-radius:5px;
+}
+
+.VinilDescricaoTagDentro p{
+
+    font-size:20px;
+}

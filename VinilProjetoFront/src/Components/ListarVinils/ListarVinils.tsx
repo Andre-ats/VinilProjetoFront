@@ -4,7 +4,6 @@ import { Get } from "../../API/Requests/Get/GetModel";
 import { VinilList } from "../../API/Interfaces/InterfaceUsuarioPadrao/VinilList";
 import { useAppDispatch } from "../../Store/Types";
 import { altera } from "../../Store/VinilVisualizarSlice";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 

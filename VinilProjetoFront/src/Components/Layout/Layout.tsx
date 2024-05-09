@@ -52,7 +52,7 @@ export function Layout(props : ILayout){
                 <div className="header-full">
                     <div className="header-esquerda">
                         {props.mostrarLogo && 
-                            <img src={SgDiscosImagem} width={100}/>
+                            <img style={{cursor:"pointer"}} src={SgDiscosImagem} width={100} onClick={()=>navigate("/VisualizarVinis")}/>
                         }
                     </div>
                     <div className="header-direita">
