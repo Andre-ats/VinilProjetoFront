@@ -60,7 +60,7 @@ export function Layout(props : ILayout){
                             <img style={{cursor:"pointer"}} src={CarrinhoImagem} width={50} onClick={()=>navigate("/Carrinho")}/>
                         }
                         {props.mostrarPerfil &&
-                            <img style={{cursor:"pointer"}} src={PerfilImagem} width={50}/>
+                            <img style={{cursor:"pointer"}} src={PerfilImagem} width={50} onClick={()=>navigate("/Login")}/>
                         }
                     </div>
                 </div>

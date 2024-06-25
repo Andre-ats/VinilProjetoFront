@@ -1,0 +1,42 @@
+.sessao-login-inteiro{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.sessao-login-dentro{
+    width:60%;
+    display:flex;
+    margin:50px 50px 50px 50px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow: 5px 10px 5px rgb(153, 153, 153);
+}
+.sessao-login-dentro-esquerda, .sessao-login-dentro-direita{
+    width:50%;
+    margin:200px 0px 200px 0px;
+}
+.sessao-login-dentro-esquerda{
+    display: flex;
+    justify-content:center;
+}
+.botao-Login-Usuario{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.botao-Login-Usuario button{
+    background-color:#007bff;
+    margin:10px 0px 20px 0px;
+    border:0px;
+    border-radius:5px;
+    height:40px;
+    width:80%;
+    color:white;
+    cursor: pointer;
+}
+.botao-Login-Usuario button:hover{
+    background-color:#0152a8;
+    box-shadow:2px 5px 5px #0152a8;
+    transition-duration:1s;
+}

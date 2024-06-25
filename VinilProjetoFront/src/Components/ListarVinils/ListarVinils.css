@@ -26,6 +26,7 @@
     flex-direction: column; 
     align-items: center;
 }
+
 .botao-adicionar-carrinho button{
     background-color:#007bff;
     margin:10px 0px 20px 0px;
