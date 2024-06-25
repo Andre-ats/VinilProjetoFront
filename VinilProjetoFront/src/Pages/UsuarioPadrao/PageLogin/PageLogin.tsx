@@ -3,13 +3,18 @@ import { InputForms } from "../../../Components/Formulario/InputForms";
 import { Layout } from "../../../Components/Layout/Layout";
 import "./PageLogin.css"
 import { BotaoEnvio } from "../../../Components/Formulario/BotaoEnvio";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ILogin, PostLoginUsuarioComprador } from "../../../API/Requests/Post/PostLoginUsuarioComprador";
+import { saveToken } from "../../../API/Requests/Token/SalvarToken";
 
 export function PageLogin(){
 
     const[retornoApi, setRetornoApi] = useState()
     const[dadosInput, setDadosInput] = useState([])
+
+    useEffect(()=>(
+        saveToken(retornoApi!)
+    ),[retornoApi])
 
     const loginObj: ILogin = {
         email:dadosInput![0],
