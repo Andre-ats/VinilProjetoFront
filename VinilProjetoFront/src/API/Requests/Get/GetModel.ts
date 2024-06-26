@@ -4,11 +4,18 @@ interface Get{
     URL: String
     setCallback: (value: any) => void
     MensagemFalha?: string
+    token?:string
 }
 
 export async function Get(props : Get){
     try {
-            const response = await fetch(`${API_BASE}${props.URL}`);
+            const response = await fetch(`${API_BASE}${props.URL}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${props.token}`,
+            },
+            });
             if (!response.ok) {
                 throw new Error(props.MensagemFalha);
             }

@@ -6,7 +6,6 @@ import PerfilImagem from "../../Imagens/Perfil.png"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { RecuperarToken } from "../../API/Requests/Token/RecuperarToken";
-import { RemoverToken } from "../../API/Requests/Token/RemoverToken";
 
 interface ILayout{
     mostrarHeader?: boolean | null
@@ -27,9 +26,7 @@ export function Layout(props : ILayout){
     function redirecionarLogin(){
         const token = RecuperarToken();
         if(token !== undefined){
-            console.log(RecuperarToken())
-            RemoverToken()
-            navigate("/VisualizarVinis")
+            navigate("/Perfil")
         }
         else{
             navigate("/Login")
