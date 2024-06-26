@@ -6,6 +6,7 @@ import PerfilImagem from "../../Imagens/Perfil.png"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { RecuperarToken } from "../../API/Requests/Token/RecuperarToken";
+import { RemoverToken } from "../../API/Requests/Token/RemoverToken";
 
 interface ILayout{
     mostrarHeader?: boolean | null
@@ -22,9 +23,9 @@ interface ILayout{
 export function Layout(props : ILayout){
 
     const [abreTab, setAbreTab] = useState(true)
+    const token = RecuperarToken();
 
     function redirecionarLogin(){
-        const token = RecuperarToken();
         if(token !== undefined){
             navigate("/Perfil")
         }
@@ -39,6 +40,12 @@ export function Layout(props : ILayout){
         }else{
             setAbreTab(true)
         }
+    }
+
+    function sairConta(){
+        RemoverToken()
+        navigate("/VisualizarVinis")
+        window.location.reload()
     }
 
     const enumEstiloMusica = 
@@ -72,6 +79,22 @@ export function Layout(props : ILayout){
                         }
                         {props.mostrarPerfil &&
                             <img style={{cursor:"pointer"}} src={PerfilImagem} width={50} onClick={redirecionarLogin}/>
+                        }
+                        {token &&
+                        <div className="acessoconta-sairconta">
+                            <p className="acessoconta-sairconta-hover" style={{cursor:"pointer"}} onClick={redirecionarLogin} >Minha Conta</p>
+                            <p className="acessoconta-sairconta-hover" style={{cursor:"pointer"}} onClick={sairConta}>Sair</p>
+                        </div>
+                        }
+                        {!token &&
+                        <div className="acessoconta-sairconta">
+                            <div style={{display:"flex"}}>
+                                <p style={{marginRight:"5px"}} >Faça o </p>
+                                <p onClick={redirecionarLogin} className="acessoconta-sairconta-hover" style={{marginRight:"5px", cursor:"pointer"}}>Login </p>
+                                <p>ou</p>
+                            </div>
+                            <p className="acessoconta-sairconta-hover" style={{cursor:"pointer"}} onClick={sairConta}>Cadastre</p>
+                        </div>
                         }
                     </div>
                 </div>

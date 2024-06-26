@@ -55,7 +55,7 @@ export function PageLogin(){
                         />
                         <div style={{display:"flex"}}>
                             <p>Ainda não possui uma conta?</p>
-                            <p onClick={CadastrarNavigate} style={{textDecoration:"underline", color:"hotpink", marginLeft:"5px", cursor:"pointer"}}>Cadastrar-se</p>
+                            <p onClick={CadastrarNavigate} style={{textDecoration:"underline", color:"hotpink", marginLeft:"5px", cursor:"pointer"}}>Cadastre-se!</p>
                         </div>
                         <BotaoEnvio 
                             API={PostLoginUsuarioComprador} 

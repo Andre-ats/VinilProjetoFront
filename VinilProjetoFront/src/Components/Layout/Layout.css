@@ -87,3 +87,18 @@ body{
     background-color:rgb(240, 244, 249);
     padding:10px 0px 50px 0px;
 }
+
+.acessoconta-sairconta{
+    margin-left:10px;
+}
+
+.acessoconta-sairconta p{
+    margin: 5px 0px 0px 0px;
+    color:gray;
+}
+
+.acessoconta-sairconta-hover:hover{
+    text-decoration:underline;
+    color:hotpink;
+    transition-duration:0.5s;
+}
