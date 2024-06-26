@@ -5,6 +5,8 @@ import CarrinhoImagem from "../../Imagens/Carrinho.png"
 import PerfilImagem from "../../Imagens/Perfil.png"
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { RecuperarToken } from "../../API/Requests/Token/RecuperarToken";
+import { RemoverToken } from "../../API/Requests/Token/RemoverToken";
 
 interface ILayout{
     mostrarHeader?: boolean | null
@@ -21,6 +23,18 @@ interface ILayout{
 export function Layout(props : ILayout){
 
     const [abreTab, setAbreTab] = useState(true)
+
+    function redirecionarLogin(){
+        const token = RecuperarToken();
+        if(token !== undefined){
+            console.log(RecuperarToken())
+            RemoverToken()
+            navigate("/VisualizarVinis")
+        }
+        else{
+            navigate("/Login")
+        }
+    }
 
     function abrirTab(){
         if(abreTab == true){
@@ -60,7 +74,7 @@ export function Layout(props : ILayout){
                             <img style={{cursor:"pointer"}} src={CarrinhoImagem} width={50} onClick={()=>navigate("/Carrinho")}/>
                         }
                         {props.mostrarPerfil &&
-                            <img style={{cursor:"pointer"}} src={PerfilImagem} width={50} onClick={()=>navigate("/Login")}/>
+                            <img style={{cursor:"pointer"}} src={PerfilImagem} width={50} onClick={redirecionarLogin}/>
                         }
                     </div>
                 </div>

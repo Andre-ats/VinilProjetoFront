@@ -12,16 +12,20 @@ export function PageLogin(){
     const[retornoApi, setRetornoApi] = useState()
     const[dadosInput, setDadosInput] = useState([])
 
-    useEffect(()=>(
-        saveToken(retornoApi!)
-    ),[retornoApi])
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (retornoApi) {
+            console.log("fdp:" + retornoApi)
+            saveToken(retornoApi);
+            navigate("/VisualizarVinis");
+        }
+    }, [retornoApi]);
 
     const loginObj: ILogin = {
         email:dadosInput![0],
         senha:dadosInput![1]
     }
-
-    const navigate = useNavigate()
 
     function CadastrarNavigate(){
         navigate("/")
@@ -42,12 +46,22 @@ export function PageLogin(){
                         <h1>Login:</h1>
                     </div>
                     <div className="sessao-login-dentro-direita">
-                        <InputForms Label={["Email", "Senha"]} typeInput={["email", "password"]} QuantiaElementoLinha={1} dadosState={dadosInput} setDadosState={setDadosInput}/>
+                        <InputForms 
+                            Label={["Email", "Senha"]} 
+                            typeInput={["email", "password"]} 
+                            QuantiaElementoLinha={1} 
+                            dadosState={dadosInput} 
+                            setDadosState={setDadosInput}
+                        />
                         <div style={{display:"flex"}}>
                             <p>Ainda não possui uma conta?</p>
                             <p onClick={CadastrarNavigate} style={{textDecoration:"underline", color:"hotpink", marginLeft:"5px", cursor:"pointer"}}>Cadastrar-se</p>
                         </div>
-                        <BotaoEnvio API={PostLoginUsuarioComprador} objetoEnviar={loginObj} nomeBotao="Entrar" retornoObj={setRetornoApi}/>
+                        <BotaoEnvio 
+                            API={PostLoginUsuarioComprador} 
+                            objetoEnviar={loginObj} nomeBotao="Entrar" 
+                            retornoObj={setRetornoApi}
+                        />
                     </div>
                 </div>
             </div>
