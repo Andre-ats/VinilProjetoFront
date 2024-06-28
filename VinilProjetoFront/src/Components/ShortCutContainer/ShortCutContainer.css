@@ -1,0 +1,22 @@
+.shortcut-container-todo{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.shortcut-container{
+    width:90%;
+    border:1px solid rgb(219, 219, 219);
+    border-radius:5px;
+    box-shadow: 5px 10px 5px rgb(153, 153, 153);
+    display:flex;
+    margin-left:5%;
+    margin-top:20px;
+}
+.shortcut-container p{
+    margin:33px 0px 30px 3px;
+    color:rgb(95, 99, 104) ;
+}
+.shortcut-container img{
+    margin:30px 0px 30px 5px;
+}
