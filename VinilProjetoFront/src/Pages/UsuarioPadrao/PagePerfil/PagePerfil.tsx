@@ -38,6 +38,7 @@ export function PagePerfil(){
                 <ShortCutContainer
                     NomeContainers={[perfil?.usuarioComprador.email!, "Vinis Favoritos"]}
                     Imagens={[Email, Favorito]} // Se nao quiser imagem coloque = "";
+                    urlRedirecionamento={["", "/VisualizarVinis"]}
                     QuantiaElementoLinha={2}
                 />
             </div> 
