@@ -5,3 +5,17 @@
     width:100%
 }
 
+.pedido-pagina-perfil-todo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:30px 0px 10px 0px;
+}
+.pedido-pagina-perfil-dentro{
+    width:90%;
+    height:500px;
+    border:1px solid rgb(219, 219, 219);
+    border-radius:5px;
+    box-shadow: 5px 10px 5px rgb(153, 153, 153);
+}
