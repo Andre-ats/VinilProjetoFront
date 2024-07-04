@@ -16,7 +16,6 @@ export function PageLogin(){
 
     useEffect(() => {
         if (retornoApi) {
-            console.log("fdp:" + retornoApi)
             saveToken(retornoApi);
             navigate("/VisualizarVinis");
         }

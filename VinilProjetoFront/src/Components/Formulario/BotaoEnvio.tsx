@@ -14,7 +14,9 @@ export function BotaoEnvio(props: BotaoEnvio){
 
     async function EnvioObjApi(){
         const retorno = await props.API(props.objetoEnviar)
-        props.retornoObj!(retorno)
+        if(props.retornoObj){
+            props.retornoObj!(retorno)
+        }
         navigate(props.ulrRedirecionamento)
     }
 

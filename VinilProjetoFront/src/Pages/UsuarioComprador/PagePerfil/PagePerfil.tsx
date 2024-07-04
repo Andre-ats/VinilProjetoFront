@@ -48,12 +48,16 @@ export function PagePerfil(){
                         Pedido
                     </div>
                 </div>
-                <ShortCutContainer
-                    NomeContainers={["Pedidos", "Favoritos", "Atendimento"]}
-                    Imagens={[Pedidos, Favorito, Contato]} // Se nao quiser imagem coloque = "";
-                    urlRedirecionamento={[""]}
-                    QuantiaElementoLinha={3}
-                />
+                    <div style={{width:"100%", display:"flex", justifyContent:"center"}}>
+                        <div style={{width:"93%"}}>
+                            <ShortCutContainer
+                                NomeContainers={["Pedidos", "Favoritos", "Atendimento"]}
+                                Imagens={[Pedidos, Favorito, Contato]} // Se nao quiser imagem coloque = "";
+                                urlRedirecionamento={["/Pedidos", "/Favoritos", "/Atendimento"]}
+                                QuantiaElementoLinha={3}
+                            />
+                        </div>
+                    </div>
             </div> 
         </Layout>
     )

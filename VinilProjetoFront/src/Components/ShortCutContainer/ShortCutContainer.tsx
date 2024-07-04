@@ -24,11 +24,11 @@ export function ShortCutContainer(props: IShortCutContainer){
         <Fragment>
             <div className="shortcut-container-todo" style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${props.QuantiaElementoLinha ?? 2}, 2fr)`,
+                gridTemplateColumns: `repeat(${props.QuantiaElementoLinha ?? 2}, 1fr)`,
                 width:"100%",
             }}>
                 {props.NomeContainers.map((item, key)=>(
-                <div className="shortcut-container" 
+                <div key={key} className="shortcut-container" 
                 style={{
                     cursor: 
                         props.urlRedirecionamento && props.urlRedirecionamento[key] != "" 
