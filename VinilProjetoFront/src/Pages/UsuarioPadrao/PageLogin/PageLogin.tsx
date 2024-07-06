@@ -2,10 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { InputForms } from "../../../Components/Formulario/InputForms";
 import { Layout } from "../../../Components/Layout/Layout";
 import "./PageLogin.css"
-import { BotaoEnvio } from "../../../Components/Formulario/BotaoEnvio";
-import { useEffect, useState } from "react";
-import { ILogin, PostLoginUsuarioComprador } from "../../../API/Requests/Post/PostLoginUsuarioComprador";
-import { saveToken } from "../../../API/Requests/Token/SalvarToken";
+import { BotaoEnvioLogin } from "../../../Components/Formulario/BotaoEnvio";
+import { useState } from "react";
+import { ILogin, PostLoginAdmin, PostLoginUsuarioComprador } from "../../../API/Requests/Post/PostLoginUsuarioComprador";
 
 export function PageLogin(){
 
@@ -13,13 +12,6 @@ export function PageLogin(){
     const[dadosInput, setDadosInput] = useState([])
 
     const navigate = useNavigate()
-
-    useEffect(() => {
-        if (retornoApi) {
-            saveToken(retornoApi);
-            navigate("/VisualizarVinis");
-        }
-    }, [retornoApi]);
 
     const loginObj: ILogin = {
         email:dadosInput![0],
@@ -56,10 +48,12 @@ export function PageLogin(){
                             <p>Ainda não possui uma conta?</p>
                             <p onClick={CadastrarNavigate} style={{textDecoration:"underline", color:"hotpink", marginLeft:"5px", cursor:"pointer"}}>Cadastre-se!</p>
                         </div>
-                        <BotaoEnvio 
-                            API={PostLoginUsuarioComprador} 
-                            objetoEnviar={loginObj} nomeBotao="Entrar" 
+                        <BotaoEnvioLogin 
+                            API={[PostLoginUsuarioComprador, PostLoginAdmin]} 
+                            objetoEnviar={loginObj} 
+                            nomeBotao="Entrar" 
                             retornoObj={setRetornoApi}
+                            ulrRedirecionamento={["/VisualizarVinis", "/VisualizarVinis"]}
                         />
                     </div>
                 </div>
