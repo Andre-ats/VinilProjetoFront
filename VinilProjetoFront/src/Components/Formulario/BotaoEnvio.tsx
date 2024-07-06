@@ -14,14 +14,19 @@ export function BotaoEnvio(props: BotaoEnvio){
     const navigate = useNavigate()
 
     async function EnvioObjApi(){
-        const retorno = await props.API(props.objetoEnviar)
 
-        if (retorno){
-            props.retornoObj!(retorno)
-            navigate(props.ulrRedirecionamento)
-        }
-        else{
-            console.log("Erro!")
+        try {
+            const retorno = await props.API(props.objetoEnviar)
+
+            if (retorno){
+                props.retornoObj!(retorno)
+                navigate(props.ulrRedirecionamento)
+            }
+            else{
+                console.error("");
+            }   
+        } catch (error) {
+            
         }
 
     }

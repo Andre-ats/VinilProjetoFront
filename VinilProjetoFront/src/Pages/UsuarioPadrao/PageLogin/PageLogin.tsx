@@ -8,7 +8,7 @@ import { ILogin, PostLoginAdmin, PostLoginUsuarioComprador } from "../../../API/
 
 export function PageLogin(){
 
-    const[retornoApi, setRetornoApi] = useState()
+    const[, setRetornoApi] = useState()
     const[dadosInput, setDadosInput] = useState([])
 
     const navigate = useNavigate()
