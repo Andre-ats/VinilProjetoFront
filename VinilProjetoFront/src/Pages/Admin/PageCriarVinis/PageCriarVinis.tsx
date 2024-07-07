@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InputForms } from "../../../Components/Formulario/InputForms";
 import { Layout } from "../../../Components/Layout/Layout";
 import "./PageCriarVinis.css"
@@ -8,6 +8,8 @@ import { TipoDeEmbalagem } from "../../../API/Interfaces/InterfaceUsuarioPadrao/
 import { IPostVinil, PostVinil } from "../../../API/Requests/Post/PostVinil";
 import { BotaoEnvio } from "../../../Components/Formulario/BotaoEnvio";
 import { tipoDeAlbum } from "../../../API/Interfaces/InterfaceUsuarioPadrao/EnumTipoDeAlbum";
+import { EnvioDeArquivo } from "../../../Components/EnvioDeArquivo/EnvioDeArquivo";
+import { PostImagemVinil } from "../../../API/Requests/Post/PostImagemVinil";
 
 export function PageCriarVinis(){
 
@@ -15,7 +17,17 @@ export function PageCriarVinis(){
     const [dadosCaracteristicasPrincipais, setdadosCaracteristicasPrincipais] = useState([])
     const [dadosCaracteristicasSecundarias, setdadosCaracteristicasSecundarias] = useState([])
 
+    const [foto, setFoto] = useState<File>()
+
     const [retornoAPI, setRetornoAPI] = useState()
+
+    useEffect(()=>{
+        if(retornoAPI){
+            PostImagemVinil({ id: retornoAPI, file: foto! });
+            console.log(foto)
+            setRetornoAPI(undefined)
+        }
+    },[retornoAPI])
 
     const vinilObj:IPostVinil = {
         "nomeVinil": dadosInformacoesVinil![0],
@@ -38,7 +50,6 @@ export function PageCriarVinis(){
         "statusVinil":dadosCaracteristicasSecundarias![2]
     }
 
-    console.log(retornoAPI)
 
     return(
         <Layout
@@ -80,6 +91,9 @@ export function PageCriarVinis(){
                             Enum={["",estiloMusical, statusVinil]}
                         />
                     </div>
+                    <EnvioDeArquivo
+                        setFoto={setFoto}
+                    />
                     <BotaoEnvio
                         API={PostVinil}
                         nomeBotao="Enviar"
