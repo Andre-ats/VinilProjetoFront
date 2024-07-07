@@ -53,7 +53,7 @@ export function PageLogin(){
                             objetoEnviar={loginObj} 
                             nomeBotao="Entrar" 
                             retornoObj={setRetornoApi}
-                            ulrRedirecionamento={["/VisualizarVinis", "/VisualizarVinis"]}
+                            ulrRedirecionamento={["/VisualizarVinis", "/CriacaoVinil"]}
                         />
                     </div>
                 </div>

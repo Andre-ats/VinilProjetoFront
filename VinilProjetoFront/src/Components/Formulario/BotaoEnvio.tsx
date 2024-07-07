@@ -46,15 +46,16 @@ export function BotaoEnvioLogin(props:BotaoEnvio){
 
         if (retorno){
             props.retornoObj!(retorno)
-            saveToken(retorno);
+            await saveToken(retorno);
             navigate(props.ulrRedirecionamento[0])
         }
         else{
             const retorno02 = await props.API[1](props.objetoEnviar)
             if(retorno02){
                 props.retornoObj!(retorno02)
-                saveToken(retorno02);
+                await saveToken(retorno02);
                 navigate(props.ulrRedirecionamento[1])
+                window.location.reload()
             }else{
                 console.log("Error!")
             }

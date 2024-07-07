@@ -1,0 +1,17 @@
+.Criacao-Vinil-Todo{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+.Criacao-Vinil-Dentro{
+    width:90%;
+}
+.Criacao-Vinil-Dentro div{
+    margin-top:25px;
+}
+
+.Criacao-Vinil-Dentro div h1{
+    color:gray;
+    width:100%;
+    border-bottom:1px solid rgb(219, 219, 219);
+}
