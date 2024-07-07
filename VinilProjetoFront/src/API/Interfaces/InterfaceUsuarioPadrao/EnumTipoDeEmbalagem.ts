@@ -1,4 +1,3 @@
 export enum TipoDeEmbalagem{
-    "Lacrado", 
-    "Deslacrado"
+    "Lacrado", "Deslacrado", "Vazio"
 }

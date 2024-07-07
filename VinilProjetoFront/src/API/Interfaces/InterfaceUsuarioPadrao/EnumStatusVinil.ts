@@ -1,4 +1,5 @@
 export enum statusVinil{
-    "Ativo",
-    "Inativo"
+    "Ativo", 
+    "Inativo", 
+    "Vazio"
 }

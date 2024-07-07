@@ -1,12 +1,13 @@
 export enum estiloMusical{
-    "Rock",
-    "Blues",
-    "Pop",
-    "Jazz",
-    "Hip Hop",
-    "Eletronica",
-    "RB",
-    "Reggae",
-    "Rap",
-    "Trap"
+    "Rock", 
+    "POP", 
+    "Jazz", 
+    "Rap", 
+    "Trap", 
+    "HipHop", 
+    "Eletronica", 
+    "Reggae", 
+    "RB", 
+    "Blues", 
+    "Vazio"
 }

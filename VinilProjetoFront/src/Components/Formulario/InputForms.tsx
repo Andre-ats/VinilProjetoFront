@@ -42,7 +42,7 @@ export function InputForms(props: InputFormsProps) {
                                 value={getValue[key] !== null && getValue[key] !== undefined ? getValue[key] : ''}
                                 onChange={(e) => getTarget(e, key)}
                             >
-                                <option value="" disabled>Selecione uma opcao</option>
+                                <option value="" disabled>Selecione uma opção...</option>
                                 {Object.keys(props.Enum[key])
                                     .filter(enumKey => isNaN(Number(enumKey)))
                                     .map((enumItem, index) => (

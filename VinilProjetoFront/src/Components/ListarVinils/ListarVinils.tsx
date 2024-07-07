@@ -46,7 +46,7 @@ export function ListarVinils(props : ListarVinils){
                     <div key={key} className="vinil-unitario">
                         <div className="vinil-unitario-dentro">
                             <div className="img-vinil">
-                                <img width={450} height={450} src={item.vinilImagem[0].rotaImagemVinil} alt="Imagem"/>
+                                <img width={450} height={450} src={item.vinilImagem[0]?.rotaImagemVinil!} alt="Imagem"/>
                             </div>
                             <div className="especificacoes-vinil">
                                 <div className="nome-vinil">

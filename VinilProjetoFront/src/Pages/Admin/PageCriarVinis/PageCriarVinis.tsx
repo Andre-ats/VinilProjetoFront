@@ -5,10 +5,40 @@ import "./PageCriarVinis.css"
 import { estiloMusical } from "../../../API/Interfaces/InterfaceUsuarioPadrao/EnumEstiloMusical";
 import { statusVinil } from "../../../API/Interfaces/InterfaceUsuarioPadrao/EnumStatusVinil";
 import { TipoDeEmbalagem } from "../../../API/Interfaces/InterfaceUsuarioPadrao/EnumTipoDeEmbalagem";
+import { IPostVinil, PostVinil } from "../../../API/Requests/Post/PostVinil";
+import { BotaoEnvio } from "../../../Components/Formulario/BotaoEnvio";
+import { tipoDeAlbum } from "../../../API/Interfaces/InterfaceUsuarioPadrao/EnumTipoDeAlbum";
 
 export function PageCriarVinis(){
 
-    const [dados, setDados] = useState()
+    const [dadosInformacoesVinil, setdadosInformacoesVinil] = useState([])
+    const [dadosCaracteristicasPrincipais, setdadosCaracteristicasPrincipais] = useState([])
+    const [dadosCaracteristicasSecundarias, setdadosCaracteristicasSecundarias] = useState([])
+
+    const [retornoAPI, setRetornoAPI] = useState()
+
+    const vinilObj:IPostVinil = {
+        "nomeVinil": dadosInformacoesVinil![0],
+        "descricaoVinil": dadosInformacoesVinil![1],
+        "listaMusica": dadosInformacoesVinil![2],
+        "precoVinil": dadosInformacoesVinil![3],
+        "quantiaVinil": dadosInformacoesVinil![4],
+        "upc": dadosInformacoesVinil![5],
+        "caracteristicasPrincipaisDto": {
+            "nomeArtista": dadosCaracteristicasPrincipais![0],
+            "gravadora": dadosCaracteristicasPrincipais![1],
+            "tipoDeAlbum": dadosCaracteristicasPrincipais![2],
+            "anoLancamento": dadosCaracteristicasPrincipais![3],
+            "tipoDeEmbalagem": dadosCaracteristicasPrincipais![4]
+        },
+        "outrasCaracteristicasDto": {
+            "quantiaCancoes": dadosCaracteristicasSecundarias![0],
+            "estiloMusical": dadosCaracteristicasSecundarias![1]
+        },
+        "statusVinil":dadosCaracteristicasSecundarias![2]
+    }
+
+    console.log(retornoAPI)
 
     return(
         <Layout
@@ -24,8 +54,8 @@ export function PageCriarVinis(){
                         <InputForms
                             QuantiaElementoLinha={3}
                             Label = {["Nome Produto", "Descrição Produto", "Lista de Músicas", "Preço do Produto", "Quantidade de Produto", "UPC"]}
-                            dadosState={dados}
-                            setDadosState={setDados}
+                            dadosState={dadosInformacoesVinil}
+                            setDadosState={setdadosInformacoesVinil}
                         />
                     </div>
                     <div>
@@ -33,10 +63,10 @@ export function PageCriarVinis(){
                         <InputForms
                             QuantiaElementoLinha={3}
                             Label = {["Nome do Artista", "Gravadora", "Tipo De Album", "Ano de Lancamento", "Tipo De Embalagem"]}
-                            dadosState={dados}
-                            setDadosState={setDados}
-                            typeInput={["", "", "", "", "Enum"]}
-                            Enum={["","","","",TipoDeEmbalagem]}
+                            dadosState={dadosCaracteristicasPrincipais}
+                            setDadosState={setdadosCaracteristicasPrincipais}
+                            typeInput={["", "", "Enum", "", "Enum"]}
+                            Enum={["","",tipoDeAlbum,"",TipoDeEmbalagem]}
                         />
                     </div>
                     <div>
@@ -44,12 +74,18 @@ export function PageCriarVinis(){
                         <InputForms
                             QuantiaElementoLinha={3}
                             Label = {["Quantia Cancoes","Estilo Musical", "Status Produto"]}
-                            dadosState={dados}
-                            setDadosState={setDados}
+                            dadosState={dadosCaracteristicasSecundarias}
+                            setDadosState={setdadosCaracteristicasSecundarias}
                             typeInput={["", "Enum", "Enum"]}
                             Enum={["",estiloMusical, statusVinil]}
                         />
                     </div>
+                    <BotaoEnvio
+                        API={PostVinil}
+                        nomeBotao="Enviar"
+                        objetoEnviar={vinilObj}
+                        retornoObj={setRetornoAPI}
+                    />
                 </div>
             </div>
         </Layout>
