@@ -30,7 +30,6 @@ export interface IPostVinil {
 
 export async function PostVinil(props: IPostVinil){
     const tokenRecuperar = RecuperarToken();
-    console.log(props)
 
     try {
         const response = await fetch(`${API_BASE}Vinil/postCadastrarVinil`, {

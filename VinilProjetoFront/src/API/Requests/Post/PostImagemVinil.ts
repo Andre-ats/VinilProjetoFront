@@ -10,7 +10,6 @@ export async function PostImagemVinil(props: IPostImagemVinil) {
     const tokenRecuperar = RecuperarToken();
 
     const formData = new FormData();
-    console.log(props.id)
     formData.append('vinilID', props.id.vinilId);
     formData.append('file', props.file);
 

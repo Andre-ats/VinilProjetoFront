@@ -1,0 +1,9 @@
+.containerVinil-Todo{
+    width:100%;
+    height:90px;
+    display:flex;
+    justify-content:center;
+}
+.containerVinil-dentro{
+    width:90%;
+}

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 import { RecuperarToken } from './API/Requests/Token/RecuperarToken'
 import { decodeToken } from './Bibliotecas/DecodeToken'
 import { PageCriarVinis } from './Pages/Admin/PageCriarVinis/PageCriarVinis'
+import { PageVinisFavoritos } from './Pages/UsuarioComprador/PageVinisFavoritos/PageVinisFavoritos'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/VisualizarVinis' element={<VisualizarVinis/>}/>
         <Route path='/VisualizarVinisEspecifico/:vinil' element={<PageVisualizarVinilEspecifico/>}/>
+        <Route path='/Favoritos' element={<PageVinisFavoritos/>}/>
         <Route path='/Perfil' element={<PagePerfil/>}/>
         <Route path='/Atendimento' element={<PageAtendimento/>}/>
         <Route path='/Login' element={<PageLogin/>}/>

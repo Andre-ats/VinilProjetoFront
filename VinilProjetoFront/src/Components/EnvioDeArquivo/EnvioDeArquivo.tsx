@@ -6,7 +6,7 @@ interface IEnvioDeArquivo{
 
 export function EnvioDeArquivo(props: IEnvioDeArquivo){
 
-    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [, setSelectedFile] = useState<File | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];

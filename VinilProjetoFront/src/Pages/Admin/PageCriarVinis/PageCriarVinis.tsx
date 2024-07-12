@@ -24,7 +24,6 @@ export function PageCriarVinis(){
     useEffect(()=>{
         if(retornoAPI){
             PostImagemVinil({ id: retornoAPI, file: foto! });
-            console.log(foto)
             setRetornoAPI(undefined)
         }
     },[retornoAPI])
