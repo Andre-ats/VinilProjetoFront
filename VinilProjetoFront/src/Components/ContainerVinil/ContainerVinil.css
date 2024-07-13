@@ -1,9 +1,25 @@
 .containerVinil-Todo{
     width:100%;
-    height:90px;
     display:flex;
     justify-content:center;
 }
 .containerVinil-dentro{
     width:90%;
+    border:1px solid rgb(219, 219, 219);
+    box-shadow: 5px 10px 5px rgb(153, 153, 153);
+    border-radius: 5px;
+    margin-top: 20px;
+    display:flex;
+}
+.containerVinil-dentro-Imagem{
+    width:20%;
+}
+
+.containerVinil-dentro-escrita{
+    width:30%;
+    border-right:1px solid black;
+    margin:10px 0px 10px 0px;
+}
+.containerVinil-dentro-escrita-nomeArtista{
+    color:rgb(95, 99, 104);
 }

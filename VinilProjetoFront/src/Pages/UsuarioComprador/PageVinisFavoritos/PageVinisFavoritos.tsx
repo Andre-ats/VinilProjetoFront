@@ -3,7 +3,6 @@ import { ContainerVinil } from "../../../Components/ContainerVinil/ContainerVini
 import { Layout } from "../../../Components/Layout/Layout";
 import { Get } from "../../../API/Requests/Get/GetModel";
 import { RecuperarToken } from "../../../API/Requests/Token/RecuperarToken";
-import { IListarVinilFavoritos } from "../../../API/Interfaces/InterfaceUsuarioPadrao/VinisFavoritos";
 
 export function PageVinisFavoritos(){
 

@@ -1,14 +1,17 @@
-import { estiloMusical } from "./EnumEstiloMusical";
+import { CaracteristicasPrincipaisVinil } from "./CaracteristicasPrincipaisVinil";
 import { statusVinil } from "./EnumStatusVinil";
+import { OutrasCaracteristicas } from "./OutrasCaracteristicas";
 import { VinilImagem } from "./VinilImagem";
 
 export interface VinilList{
     nomeVinil: string,
     descricaoVinil: string,
+    listaMusica: string,
     precoVinil: string,
     quantiaVinil: string,
-    estiloMusical: estiloMusical,
+    upc: string,
+    caracteristicasPrincipais: CaracteristicasPrincipaisVinil
+    outrasCaracteristicas: OutrasCaracteristicas
+    statusVinil: statusVinil
     vinilImagem: VinilImagem[]
-    statusVinil: statusVinil,
-    id: string
 }
